@@ -17,7 +17,7 @@ export default function Hero() {
         sx={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url(/pozadi.png)",
+          backgroundImage: "url(pozadi.png)",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: {
