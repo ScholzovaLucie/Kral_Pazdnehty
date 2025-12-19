@@ -1,5 +1,6 @@
 import { Box, Button, Container, Typography, Stack } from "@mui/material";
-import Logo from "./Logo";
+import logo from "/public/logo_brown.png";
+import { Height } from "@mui/icons-material";
 
 export default function Hero() {
   return (
@@ -21,7 +22,7 @@ export default function Hero() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: {
-            xs: "top center", // MOBIL: hlavy/postavy nahoře
+            xs: "top center",
             md: "center",
           },
           opacity: { xs: 0.22, md: 0.28 },
@@ -30,6 +31,24 @@ export default function Hero() {
             md: "grayscale(20%) blur(1px)",
           },
         }}
+      />
+      <Box
+        sx={(theme) => ({
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: "28%",
+          background: `linear-gradient(
+      to bottom,
+      ${theme.palette.background.default}00 0%,
+      ${theme.palette.background.default}00 45%,
+      ${theme.palette.background.default}40 70%,
+      ${theme.palette.background.default}80 85%,
+      ${theme.palette.background.default} 100%
+    )`,
+          pointerEvents: "none",
+        })}
       />
 
       {/* Overlay */}
@@ -58,8 +77,12 @@ export default function Hero() {
           alignItems="center"
           sx={{ mb: 4 }}
         >
-          <Logo size={56} />
-
+          <Box
+            component="img"
+            src={logo}
+            alt="logo"
+            sx={{ height: 70, fill: "text.secondary" }}
+          />
           <Box>
             <Typography variant="h4" sx={{ fontWeight: 700, lineHeight: 1 }}>
               KRÁL & syn
