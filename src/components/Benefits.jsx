@@ -1,4 +1,4 @@
-import { Typography, Grid, Box } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import GroupIcon from "@mui/icons-material/Group";
 import PetsIcon from "@mui/icons-material/Pets";
 import HandymanIcon from "@mui/icons-material/Handyman";
@@ -20,42 +20,54 @@ const benefits = [
   {
     icon: <HandymanIcon fontSize="large" />,
     title: "Praxe a spolehlivost",
-    text: "Víme, co děláme. Přijedeme, odvedeme práci, odjedeme.",
+    text: "Přijedeme připravení, pracujeme systematicky a držíme se domluveného postupu.",
   },
   {
     icon: <LocalShippingIcon fontSize="large" />,
     title: "Flexibilita v terénu",
-    text: "Dojedeme za vámi podle domluvy.",
+    text: "Výjezdy řešíme podle domluvy a potřeb konkrétního chovu.",
   },
 ];
 
 export default function Benefits() {
   return (
-    <Section>
-      <Reveal>
-        <Typography variant="h4" gutterBottom>
-          Proč spolupracovat s námi
-        </Typography>
-      </Reveal>
-      <Reveal delay={0.1}>
-        <Grid container spacing={4} sx={{ mt: 4 }}>
-          {benefits.map((b, i) => (
-            <Grid item xs={12} sm={6} key={i}>
-              <Reveal delay={i * 0.05}>
-                <Box sx={{ display: "flex", gap: 2 }}>
-                  <Box sx={{ color: "primary.main", mt: 0.5 }}>{b.icon}</Box>
-
-                  <Box>
-                    <Typography variant="h6">{b.title}</Typography>
-
-                    <Typography color="text.secondary">{b.text}</Typography>
-                  </Box>
+    <Section
+      eyebrow="Proč spolupracovat s námi"
+      title="Nejde jen o samotnou úpravu paznehtů, ale i o způsob práce"
+      intro="Důležitý je výsledek pro zvíře i pro provoz farmy. Proto stavíme na zkušenosti, klidném přístupu a dobře zvládnuté práci v terénu."
+    >
+      <Grid container spacing={4}>
+        {benefits.map((benefit, i) => (
+          <Grid size={{ xs: 12, sm: 6 }} key={benefit.title}>
+            <Reveal delay={i * 0.05}>
+              <Box sx={{ display: "flex", gap: 2.5 }}>
+                <Box
+                  sx={{
+                    color: "primary.main",
+                    mt: 0.5,
+                    width: 52,
+                    height: 52,
+                    borderRadius: 2,
+                    display: "grid",
+                    placeItems: "center",
+                    bgcolor: "rgba(71, 53, 36, 0.08)",
+                    flexShrink: 0,
+                  }}
+                >
+                  {benefit.icon}
                 </Box>
-              </Reveal>
-            </Grid>
-          ))}
-        </Grid>
-      </Reveal>
+
+                <Box>
+                  <Typography variant="h6" sx={{ mb: 0.8 }}>
+                    {benefit.title}
+                  </Typography>
+                  <Typography color="text.secondary">{benefit.text}</Typography>
+                </Box>
+              </Box>
+            </Reveal>
+          </Grid>
+        ))}
+      </Grid>
     </Section>
   );
 }

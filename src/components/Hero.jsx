@@ -1,121 +1,201 @@
-import { Box, Button, Container, Typography, Stack } from "@mui/material";
-import logo from "/public/logo_brown.png";
-import { Height } from "@mui/icons-material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 export default function Hero() {
   return (
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "100vh", md: "90vh" },
+        minHeight: { xs: "96vh", md: "92vh" },
         display: "flex",
         alignItems: "center",
         overflow: "hidden",
+        bgcolor: "background.default",
+        pb: { xs: 10, md: 14 },
       }}
     >
-      {/* Background image */}
       <Box
         sx={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url(pozadi.png)",
+          backgroundImage: "url(pozadi-hero.jpg)",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: {
             xs: "top center",
             md: "center",
           },
-          opacity: { xs: 0.22, md: 0.28 },
+          opacity: { xs: 0.14, md: 0.2 },
           filter: {
-            xs: "grayscale(30%) blur(0.5px)",
-            md: "grayscale(20%) blur(1px)",
+            xs: "grayscale(12%)",
+            md: "grayscale(10%) blur(0.5px)",
           },
         }}
       />
-      <Box
-        sx={(theme) => ({
-          position: "absolute",
-          left: 0,
-          right: 0,
-          bottom: 0,
-          height: "28%",
-          background: `linear-gradient(
-      to bottom,
-      ${theme.palette.background.default}00 0%,
-      ${theme.palette.background.default}00 45%,
-      ${theme.palette.background.default}40 70%,
-      ${theme.palette.background.default}80 85%,
-      ${theme.palette.background.default} 100%
-    )`,
-          pointerEvents: "none",
-        })}
-      />
 
-      {/* Overlay */}
       <Box
         sx={{
           position: "absolute",
           inset: 0,
-          backgroundColor: "background.default",
-          opacity: { xs: 0.65, md: 0.55 }, // mobil víc čitelnosti
+          background:
+            "radial-gradient(circle at top left, rgba(143, 109, 76, 0.22), transparent 38%), linear-gradient(180deg, rgba(246, 239, 229, 0.72), rgba(243, 239, 234, 0.96))",
         }}
       />
 
-      {/* Content */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: -120,
+          right: -80,
+          width: 320,
+          height: 320,
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(107, 117, 81, 0.28), rgba(107, 117, 81, 0))",
+          filter: "blur(12px)",
+        }}
+      />
+
       <Container
-        maxWidth="sm"
+        maxWidth="lg"
         sx={{
           position: "relative",
           zIndex: 1,
-          textAlign: { xs: "center", sm: "left" },
+          pt: { xs: 2, md: 0 },
         }}
       >
-        {/* Logo block */}
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          spacing={2}
-          alignItems="center"
-          sx={{ mb: 4 }}
-        >
-          <Box
-            component="img"
-            src={logo}
-            alt="logo"
-            sx={{ height: 70, fill: "text.secondary" }}
-          />
-          <Box>
-            <Typography variant="h4" sx={{ fontWeight: 700, lineHeight: 1 }}>
-              KRÁL & syn
+        <Stack spacing={{ xs: 4, md: 5 }} sx={{ py: { xs: 4, md: 3 } }}>
+          <Stack
+            direction="column"
+            spacing={1.2}
+            alignItems="center"
+            sx={{ mx: "auto" }}
+          >
+            <Box
+              component="img"
+              src="logo.png"
+              alt="KRÁL & syn - úprava paznehtů hospodářských zvířat"
+              sx={{
+                width: { xs: 260, md: 340 },
+                height: { xs: 260, md: 340 },
+                objectFit: "contain",
+              }}
+            />
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{
+                fontSize: { xs: "1rem", md: "1.08rem" },
+                letterSpacing: "0.01em",
+                textAlign: "center",
+              }}
+            >
+              Rodinná firma otce a syna
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              paznehtářská péče
-            </Typography>
-          </Box>
-        </Stack>
+          </Stack>
 
-        {/* Headline */}
-        <Typography
-          variant="h5"
-          color="text.secondary"
-          sx={{ lineHeight: 1.6 }}
-        >
-          Rodinná tradice otec & syn.
-          <br />
-          Odborná a šetrná péče o paznehty skotu.
-        </Typography>
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            spacing={{ xs: 4, md: 5 }}
+            alignItems={{ xs: "stretch", md: "flex-start" }}
+            justifyContent="space-between"
+          >
+            <Box
+              sx={{
+                maxWidth: { xs: "100%", md: 620 },
+                textAlign: { xs: "center", md: "left" },
+              }}
+            >
+              <Typography
+                variant="h1"
+                sx={{
+                  maxWidth: { xs: "100%", md: 580 },
+                  mb: 2.5,
+                  mx: { xs: "auto", md: 0 },
+                  fontSize: { xs: "2.8rem", md: "4.4rem" },
+                  lineHeight: { xs: 0.98, md: 0.94 },
+                  letterSpacing: "-0.04em",
+                }}
+              >
+                Úprava paznehtů hospodářských zvířat a korekce paznehtů skotu.
+              </Typography>
 
-        {/* CTA */}
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          spacing={2}
-          sx={{ mt: 5 }}
-        >
-          <Button variant="contained" size="large" fullWidth>
-            Zavolat
-          </Button>
-          <Button variant="outlined" size="large" fullWidth>
-            Napsat
-          </Button>
+              <Typography
+                variant="h5"
+                color="text.secondary"
+                sx={{
+                  maxWidth: { xs: "100%", md: 500 },
+                  mx: { xs: "auto", md: 0 },
+                  lineHeight: 1.68,
+                  fontSize: { xs: "1rem", md: "1.05rem" },
+                }}
+              >
+                Paznehtářské práce zajišťujeme přímo v chovu. Pomáháme s
+                preventivní péčí, korekcí paznehtů i řešením akutních potíží, s
+                důrazem na klid zvířat a spolehlivou domluvu.
+              </Typography>
+
+              <Stack
+                direction={{ xs: "column", sm: "row" }}
+                spacing={2}
+                sx={{
+                  mt: 4,
+                  justifyContent: { xs: "center", md: "flex-start" },
+                }}
+              >
+                <Button
+                  variant="contained"
+                  size="large"
+                  href="tel:+420728037437"
+                  endIcon={<ArrowOutwardIcon />}
+                >
+                  Zavolat
+                </Button>
+                <Button variant="outlined" size="large" href="#kontakt">
+                  Kontakty
+                </Button>
+              </Stack>
+            </Box>
+
+            <Box
+              sx={{
+                width: { xs: "100%", md: 320 },
+                flexShrink: 0,
+                alignSelf: { md: "center" },
+              }}
+            >
+              <Box
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  borderRadius: 3,
+                  bgcolor: "rgba(255,255,255,0.82)",
+                  border: "1px solid",
+                  borderColor: "rgba(71, 53, 36, 0.1)",
+                  boxShadow: "0 24px 60px rgba(71, 53, 36, 0.10)",
+                }}
+              >
+                <Typography
+                  sx={{
+                    mb: 1.5,
+                    color: "secondary.main",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    fontSize: "0.78rem",
+                    fontWeight: 700,
+                  }}
+                >
+                  Kde působíme
+                </Typography>
+                <Typography variant="h5" sx={{ mb: 2 }}>
+                  Královéhradecký kraj + po domluvě i dál
+                </Typography>
+                <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>
+                  Pro úpravu paznehtů, jednorázový výjezd i pravidelnou péči
+                  volejte 728 037 437 nebo 601 520 162.
+                </Typography>
+              </Box>
+            </Box>
+          </Stack>
         </Stack>
       </Container>
     </Box>

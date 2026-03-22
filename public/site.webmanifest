@@ -1,0 +1,16 @@
+{
+  "name": "KRÁL & syn",
+  "short_name": "KRÁL & syn",
+  "lang": "cs-CZ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3EFEA",
+  "theme_color": "#F3EFEA",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
