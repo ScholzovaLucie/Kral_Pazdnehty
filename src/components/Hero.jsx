@@ -6,12 +6,12 @@ export default function Hero() {
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "96vh", md: "92vh" },
+        minHeight: { xs: "92vh", md: "92vh" },
         display: "flex",
         alignItems: "center",
         overflow: "hidden",
         bgcolor: "background.default",
-        pb: { xs: 10, md: 14 },
+        pb: { xs: 8, md: 14 },
       }}
     >
       <Box
@@ -19,15 +19,18 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           backgroundImage: "url(pozadi-hero.jpg)",
-          backgroundSize: "cover",
+          backgroundSize: {
+            xs: "170%",
+            md: "cover",
+          },
           backgroundRepeat: "no-repeat",
           backgroundPosition: {
-            xs: "top center",
+            xs: "center top",
             md: "center",
           },
-          opacity: { xs: 0.14, md: 0.2 },
+          opacity: { xs: 0.22, md: 0.2 },
           filter: {
-            xs: "grayscale(12%)",
+            xs: "grayscale(2%)",
             md: "grayscale(10%) blur(0.5px)",
           },
         }}
@@ -38,21 +41,7 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(circle at top left, rgba(143, 109, 76, 0.22), transparent 38%), linear-gradient(180deg, rgba(246, 239, 229, 0.72), rgba(243, 239, 234, 0.96))",
-        }}
-      />
-
-      <Box
-        sx={{
-          position: "absolute",
-          top: -120,
-          right: -80,
-          width: 320,
-          height: 320,
-          borderRadius: "50%",
-          background:
-            "radial-gradient(circle, rgba(107, 117, 81, 0.28), rgba(107, 117, 81, 0))",
-          filter: "blur(12px)",
+            "radial-gradient(circle at top left, rgba(143, 109, 76, 0.16), transparent 38%), linear-gradient(180deg, rgba(246, 239, 229, 0.68), rgba(243, 239, 234, 0.84))",
         }}
       />
 
@@ -76,8 +65,8 @@ export default function Hero() {
               src="logo.png"
               alt="KRÁL & syn - úprava paznehtů hospodářských zvířat"
               sx={{
-                width: { xs: 260, md: 340 },
-                height: { xs: 260, md: 340 },
+                width: { xs: 210, md: 340 },
+                height: { xs: 210, md: 340 },
                 objectFit: "contain",
               }}
             />
